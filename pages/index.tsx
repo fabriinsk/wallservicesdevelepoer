@@ -35,54 +35,45 @@ export default function Home() {
         </section>
 
         <section style={styles.section}>
-          <h2>Preços e Planos</h2>
-          <div style={styles.priceTable}>
-            <div style={styles.priceCard}>
-              <h3>Plano Plus</h3>
-              <p>Benefícios:</p>
-              <ul>
-                <li>Desenvolvimento de até 5 páginas</li>
-                <li>Suporte por 30 dias</li>
-                <li>Design responsivo</li>
-              </ul>
-              <p><strong>Preço: R$ 1.200</strong></p>
-              <a href="https://wa.me/+5518996578781" target="_blank" rel="noopener noreferrer" style={styles.whatsappButton}>
-                Consulte seu orçamento
-              </a>
-            </div>
-            <div style={styles.priceCard}>
-              <h3>Plano VIP</h3>
-              <p>Benefícios:</p>
-              <ul>
-                <li>Desenvolvimento de até 10 páginas</li>
-                <li>Suporte prioritário por 60 dias</li>
-                <li>Design personalizado</li>
-                <li>Otimização para SEO</li>
-              </ul>
-              <p><strong>Preço: R$ 2.500</strong></p>
-              <a href="https://wa.me/+5518996578781" target="_blank" rel="noopener noreferrer" style={styles.whatsappButton}>
-                Consulte seu orçamento
-              </a>
-            </div>
-          </div>
-        </section>
-
-        <section style={styles.section}>
-          <h2>Tipos de Trabalho</h2>
-          <ul>
-            <li><strong>Web Design:</strong> Criação de sites e landing pages responsivos e modernos.</li>
-            <li><strong>Desenvolvimento de Software:</strong> Soluções personalizadas para sua empresa.</li>
-            <li><strong>Consultoria em SEO:</strong> Otimize seu site para maior visibilidade.</li>
-          </ul>
-        </section>
-
-        <section style={styles.section}>
           <h2>Portfólio</h2>
           <div style={styles.projects}>
             <img src="/projeto1.jpg" alt="Projeto 1" />
             <img src="/projeto2.jpg" alt="Projeto 2" />
             <img src="/projeto3.jpg" alt="Projeto 3" />
+            <img src="/projeto3.jpg" alt="Projeto 3" />
           </div>
+        </section>
+
+        {/* Tabela de Preços */}
+        <section style={styles.pricingSection}>
+          <h2>Planos e Preços</h2>
+          <div style={styles.pricingTable}>
+            <div style={styles.plan}>
+              <h3>Plano Plus</h3>
+              <p>✔ Site responsivo</p>
+              <p>✔ Página única</p>
+              <p>✔ Otimização básica</p>
+              <p>✔ Suporte via WhatsApp</p>
+              <strong>R$ 300</strong>
+            </div>
+            <div style={styles.planVip}>
+              <h3>Plano VIP</h3>
+              <p>✔ Site responsivo e completo</p>
+              <p>✔ Múltiplas páginas</p>
+              <p>✔ SEO Avançado</p>
+              <p>✔ Integrações personalizadas</p>
+              <p>✔ Suporte Premium</p>
+              <strong>R$ 600</strong>
+            </div>
+          </div>
+          <a
+            href="https://wa.me/+5518996578781"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={styles.whatsappButton}
+          >
+            <FaWhatsapp /> Consultar orçamento
+          </a>
         </section>
       </main>
 
@@ -118,17 +109,6 @@ const styles = {
   section: {
     marginBottom: '3rem',
   },
-  priceTable: {
-    display: 'grid',
-    gap: '2rem',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-  },
-  priceCard: {
-    backgroundColor: '#fff',
-    padding: '2rem',
-    borderRadius: '8px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-  },
   projects: {
     display: 'grid',
     gap: '1rem',
@@ -140,5 +120,29 @@ const styles = {
     backgroundColor: '#f3f4f6',
     marginTop: '2rem',
     fontSize: '0.9rem',
+  },
+  pricingSection: {
+    padding: '3rem 1rem',
+    backgroundColor: '#f9fafb',
+    textAlign: 'center' as const,
+  },
+  pricingTable: {
+    display: 'flex',
+    flexDirection: 'column' as const,
+    gap: '2rem',
+    maxWidth: '800px',
+    margin: '2rem auto',
+  },
+  plan: {
+    backgroundColor: '#e5e7eb',
+    padding: '1.5rem',
+    borderRadius: '12px',
+    boxShadow: '0 2px 6px rgba(0,0,0,0.1)',
+  },
+  planVip: {
+    backgroundColor: '#d1fae5',
+    padding: '1.5rem',
+    borderRadius: '12px',
+    boxShadow: '0 2px 6px rgba(0,0,0,0.1)',
   },
 };
