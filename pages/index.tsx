@@ -16,14 +16,6 @@ export default function Home() {
       <header style={styles.header}>
         <h1>WallServices</h1>
         <p>Web Design & Desenvolvimento de Software</p>
-        <a
-          href="https://wa.me/+5518996578781"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={styles.whatsappButton}
-        >
-          <FaWhatsapp /> Consulte seu orçamento
-        </a>
       </header>
 
       <main style={styles.main}>
@@ -46,10 +38,10 @@ export default function Home() {
         <section style={styles.section}>
           <h2>Portfólio</h2>
           <div style={styles.projects}>
-            <img src="/projeto1.jpg" alt="Projeto 1" />
-            <img src="/projeto2.jpg" alt="Projeto 2" />
-            <img src="/projeto3.jpg" alt="Projeto 3" />
-            <img src="/projeto4.jpg" alt="Projeto 4" /> {/* A quarta imagem foi adicionada aqui */}
+            <img src="/projeto1.jpg" alt="Projeto 1" style={styles.projectImage} />
+            <img src="/projeto2.jpg" alt="Projeto 2" style={styles.projectImage} />
+            <img src="/projeto3.jpg" alt="Projeto 3" style={styles.projectImage} />
+            <img src="/projeto4.jpg" alt="Projeto 4" style={styles.projectImage} />
           </div>
         </section>
 
@@ -67,6 +59,14 @@ export default function Home() {
               <p>R$ 3.000,00</p>
             </div>
           </div>
+          <a
+            href="https://wa.me/+5518996578781"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={styles.whatsappButton}
+          >
+            <FaWhatsapp /> Consulte seu orçamento
+          </a>
         </section>
       </main>
 
@@ -80,7 +80,7 @@ export default function Home() {
 const styles = {
   header: {
     padding: "3rem 1rem",
-    textAlign: "center" as const,  // Certifique-se de usar 'center' como valor válido
+    textAlign: "center" as const,
     backgroundColor: "#111827",
     color: "#fff",
   },
@@ -104,15 +104,21 @@ const styles = {
   },
   projects: {
     display: "grid",
+    gridTemplateColumns: "repeat(2, 1fr)", // Alterado para 2 colunas
     gap: "1rem",
-    gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+    marginBottom: "2rem",
+  },
+  projectImage: {
+    width: "100%", // Faz as imagens ocuparem 100% da largura de seu contêiner
+    height: "auto", // Mantém a proporção da imagem
+    borderRadius: "8px", // Adiciona bordas arredondadas
   },
   priceTable: {
     display: "flex",
     justifyContent: "space-between",
     gap: "1rem",
     marginTop: "2rem",
-    border: "2px solid #ddd", // Contorno adicionado
+    border: "2px solid #ddd",
     padding: "1rem",
     borderRadius: "8px",
   },
@@ -121,7 +127,7 @@ const styles = {
     padding: "1rem",
     borderRadius: "8px",
     flex: "1",
-    textAlign: "center" as const,  // Corrigido para 'center'
+    textAlign: "center" as const,
   },
   footer: {
     textAlign: "center" as const,
