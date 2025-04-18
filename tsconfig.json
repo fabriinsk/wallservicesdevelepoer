@@ -1,8 +1,22 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./*"]
-    }
-  }
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "module": "esnext",  // ou "commonjs"
+    "moduleResolution": "node",
+    "jsx": "react-jsx",  // Ou "react" se estiver usando versões anteriores do React
+    "strict": true,       // Se quiser verificar rigorosamente o código
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"]
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "pages/**/*",
+    "components/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
