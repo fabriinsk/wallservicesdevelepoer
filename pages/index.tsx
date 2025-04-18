@@ -36,6 +36,15 @@ export default function Home() {
           </div>
         </section>
 
+        <section style={styles.aboutSection}>
+          <h2>Sobre a Equipe</h2>
+          <p>
+            A nossa equipe é composta por profissionais altamente qualificados, especializados em criar soluções inovadoras e eficazes para nossos clientes. 
+            Desde o design até a implementação, trabalhamos em colaboração para garantir que cada projeto atenda às necessidades específicas do cliente. 
+            Nosso compromisso é oferecer um serviço de alta qualidade, com foco na experiência do usuário e no sucesso dos nossos clientes.
+          </p>
+        </section>
+
         <section style={styles.priceSection}>
           <h2>Preços</h2>
           <div style={styles.priceTable}>
@@ -108,6 +117,12 @@ const styles = {
   projectImage: {
     width: '100%',
     height: 'auto',
+    borderRadius: '8px',
+  },
+  aboutSection: {
+    marginTop: '3rem',
+    padding: '2rem',
+    backgroundColor: '#f9fafb',
     borderRadius: '8px',
   },
   priceSection: {
