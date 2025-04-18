@@ -14,7 +14,7 @@ export default function Home() {
         <h1>WallServices</h1>
         <p>Web Design & Desenvolvimento de Software</p>
         <a
-          href="https://wa.me/18996578781"
+          href="https://wa.me/+5518996578781"
           target="_blank"
           rel="noopener noreferrer"
           style={styles.whatsappButton}
@@ -32,6 +32,48 @@ export default function Home() {
         <section style={styles.section}>
           <h2><FaCode /> Desenvolvimento de Software</h2>
           <p>Soluções personalizadas em sistemas web e aplicações sob medida.</p>
+        </section>
+
+        <section style={styles.section}>
+          <h2>Preços e Planos</h2>
+          <div style={styles.priceTable}>
+            <div style={styles.priceCard}>
+              <h3>Plano Plus</h3>
+              <p>Benefícios:</p>
+              <ul>
+                <li>Desenvolvimento de até 5 páginas</li>
+                <li>Suporte por 30 dias</li>
+                <li>Design responsivo</li>
+              </ul>
+              <p><strong>Preço: R$ 1.200</strong></p>
+              <a href="https://wa.me/+5518996578781" target="_blank" rel="noopener noreferrer" style={styles.whatsappButton}>
+                Consulte seu orçamento
+              </a>
+            </div>
+            <div style={styles.priceCard}>
+              <h3>Plano VIP</h3>
+              <p>Benefícios:</p>
+              <ul>
+                <li>Desenvolvimento de até 10 páginas</li>
+                <li>Suporte prioritário por 60 dias</li>
+                <li>Design personalizado</li>
+                <li>Otimização para SEO</li>
+              </ul>
+              <p><strong>Preço: R$ 2.500</strong></p>
+              <a href="https://wa.me/+5518996578781" target="_blank" rel="noopener noreferrer" style={styles.whatsappButton}>
+                Consulte seu orçamento
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section style={styles.section}>
+          <h2>Tipos de Trabalho</h2>
+          <ul>
+            <li><strong>Web Design:</strong> Criação de sites e landing pages responsivos e modernos.</li>
+            <li><strong>Desenvolvimento de Software:</strong> Soluções personalizadas para sua empresa.</li>
+            <li><strong>Consultoria em SEO:</strong> Otimize seu site para maior visibilidade.</li>
+          </ul>
         </section>
 
         <section style={styles.section}>
@@ -75,6 +117,17 @@ const styles = {
   },
   section: {
     marginBottom: '3rem',
+  },
+  priceTable: {
+    display: 'grid',
+    gap: '2rem',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+  },
+  priceCard: {
+    backgroundColor: '#fff',
+    padding: '2rem',
+    borderRadius: '8px',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
   },
   projects: {
     display: 'grid',
