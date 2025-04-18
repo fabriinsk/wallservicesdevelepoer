@@ -17,8 +17,13 @@ export default function Home() {
 
       <main style={styles.main}>
         <section style={styles.section}>
-          <h2><span style={styles.arrowIcon} /> Web Design Profissional</h2>
-          <p>Criação de sites modernos, responsivos e otimizados para conversão.</p>
+        <h2 style={styles.webDesignTitle}>
+  <span style={styles.arrowIcon}>&gt;</span> Web Design Profissional
+</h2>
+
+          <p style={styles.webDesignDescription}>
+            Criação de sites modernos, responsivos e otimizados para conversão.
+          </p>
         </section>
 
         {/* Serviços */}
@@ -234,5 +239,15 @@ const styles = {
     fontSize: '2rem',
     fontWeight: 'bold',
     marginRight: '0.5rem',
+  },
+  webDesignTitle: {
+    textAlign: 'center' as const,
+    fontSize: '2rem',
+    fontWeight: 'bold',
+  },
+  webDesignDescription: {
+    textAlign: 'center' as const,
+    fontSize: '1.2rem',
+    marginTop: '1rem',
   },
 };
