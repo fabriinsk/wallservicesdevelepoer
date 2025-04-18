@@ -4,11 +4,13 @@ import { FaCode, FaPaintBrush, FaWhatsapp } from 'react-icons/fa';
 
 export default function Home() {
   useEffect(() => {
-    // Para animar o contorno quando a página carregar
-    const elements = document.querySelectorAll('.animated-border');
-    elements.forEach((el) => {
-      el.classList.add('start-border-animation');
-    });
+    // Verifica se o código está sendo executado no cliente (navegador)
+    if (typeof window !== "undefined") {
+      const elements = document.querySelectorAll('.animated-border');
+      elements.forEach((el) => {
+        el.classList.add('start-border-animation');
+      });
+    }
   }, []);
 
   return (
@@ -16,6 +18,28 @@ export default function Home() {
       <Head>
         <title>WallServices | Web Design & Software</title>
         <meta name="description" content="Serviços profissionais de web design e desenvolvimento de software." />
+        {/* Adicionando os estilos da animação diretamente no Head */}
+        <style>{`
+          @keyframes borderAnimation {
+            0% {
+              border-color: transparent;
+              box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+            }
+            100% {
+              border-color: #111827;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            }
+          }
+
+          .animated-border {
+            border: 2px solid transparent;
+            animation: borderAnimation 1s ease-in-out forwards;
+          }
+
+          .start-border-animation {
+            animation-play-state: running;
+          }
+        `}</style>
       </Head>
 
       <header style={styles.header}>
@@ -186,34 +210,3 @@ const styles = {
     marginBottom: '1.5rem',
   },
 };
-
-const animationStyles = `
-  @keyframes borderAnimation {
-    0% {
-      border-color: transparent;
-      box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-    }
-    100% {
-      border-color: #111827;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    }
-  }
-
-  .animated-border {
-    border: 2px solid transparent;
-    animation: borderAnimation 1s ease-in-out forwards;
-  }
-
-  .start-border-animation {
-    animation-play-state: running;
-  }
-`;
-
-export function addGlobalStyles() {
-  const styleSheet = document.createElement("style");
-  styleSheet.type = "text/css";
-  styleSheet.innerText = animationStyles;
-  document.head.appendChild(styleSheet);
-}
-
-addGlobalStyles();
