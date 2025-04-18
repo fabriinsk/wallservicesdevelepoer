@@ -179,7 +179,7 @@ const styles = {
     marginTop: '3rem',
   },
   priceTitle: {
-    textAlign: 'center' as const,
+    textAlign: 'center' as const, // Centralizando o título "Preços"
     fontSize: '2rem',
     fontWeight: 'bold',
     marginBottom: '2rem',
