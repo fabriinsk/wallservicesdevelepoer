@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Head from 'next/head';
 import { FaCode, FaPaintBrush, FaWhatsapp } from 'react-icons/fa';
 
 export default function Home() {
+  useEffect(() => {
+    // Para animar o contorno quando a página carregar
+    const elements = document.querySelectorAll('.animated-border');
+    elements.forEach((el) => {
+      el.classList.add('start-border-animation');
+    });
+  }, []);
+
   return (
     <>
       <Head>
@@ -25,17 +33,17 @@ export default function Home() {
         <section style={styles.servicesSection}>
           <h2>Serviços</h2>
           <div style={styles.services}>
-            <div style={styles.serviceCard}>
+            <div className="animated-border" style={styles.serviceCard}>
               <FaCode style={styles.icon} />
               <h3>Web Sites</h3>
               <p>Desenvolvimento de Landing Pages, Sites Institucionais, Blogs e E-commerces, focados em velocidade, SEO e conversão.</p>
             </div>
-            <div style={styles.serviceCard}>
+            <div className="animated-border" style={styles.serviceCard}>
               <FaPaintBrush style={styles.icon} />
               <h3>Tráfego Pago</h3>
               <p>Estratégias para Google Ads e Meta Ads, maximizando resultados com campanhas otimizadas.</p>
             </div>
-            <div style={styles.serviceCard}>
+            <div className="animated-border" style={styles.serviceCard}>
               <FaWhatsapp style={styles.icon} />
               <h3>Consultoria Digital</h3>
               <p>Análise estratégica para estruturar e escalar sua operação no digital.</p>
@@ -43,19 +51,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section style={styles.aboutSection}>
-          <h2>Sobre a Equipe</h2>
-          <p>
-            A nossa equipe é composta por profissionais altamente qualificados, especializados em criar soluções inovadoras e eficazes para nossos clientes. 
-            Desde o design até a implementação, trabalhamos em colaboração para garantir que cada projeto atenda às necessidades específicas do cliente. 
-            Nosso compromisso é oferecer um serviço de alta qualidade, com foco na experiência do usuário e no sucesso dos nossos clientes.
-          </p>
-        </section>
-
         <section style={styles.priceSection}>
           <h2>Preços</h2>
           <div style={styles.priceTable}>
-            <div style={styles.pricePlan}>
+            <div className="animated-border" style={styles.pricePlan}>
               <h3>Plano Inicial</h3>
               <p>Ideal para pequenos negócios</p>
               <ul>
@@ -67,7 +66,7 @@ export default function Home() {
               </ul>
             </div>
 
-            <div style={styles.pricePlan}>
+            <div className="animated-border" style={styles.pricePlan}>
               <h3>Plano VIP</h3>
               <p>Para empresas que precisam de mais recursos</p>
               <ul>
@@ -90,54 +89,6 @@ export default function Home() {
             style={styles.consultButton}
           >
             Consulte seu orçamento
-          </a>
-        </div>
-
-        <section style={styles.faqSection}>
-          <h2>Perguntas Frequentes</h2>
-
-          <div style={styles.faqItem}>
-            <h3>Como funciona o processo de criação?</h3>
-            <p>
-              O processo de criação é dividido em etapas claras e transparentes, começando com uma consulta inicial para entender as necessidades do cliente. Em seguida, desenvolvemos o design e a funcionalidade do site com feedback contínuo do cliente até a entrega final.
-            </p>
-          </div>
-
-          <div style={styles.faqItem}>
-            <h3>Quais são as formas de pagamento?</h3>
-            <p>
-              💳 <strong>Cartão de Crédito</strong> – Pagamento integral no início do projeto, podendo ser parcelado em até 5x sem juros ou em até 12x com juros.
-            </p>
-            <p>
-              🏦 <strong>PIX</strong> – Pagamento em duas etapas: 50% no início do projeto e 50% na entrega.
-            </p>
-          </div>
-
-          <div style={styles.faqItem}>
-            <h3>Como garantimos a segurança da sua contratação?</h3>
-            <p>
-              Prezamos pela transparência e segurança em cada projeto. Por isso, oferecemos um contrato opcional, que detalha todos os entregáveis, prazos e condições, garantindo clareza e compromisso para ambas as partes.
-            </p>
-            <p>
-              Embora seja opcional, recomendamos essa formalização para maior tranquilidade e segurança do cliente. Nosso compromisso sempre será entregar um site de alta qualidade dentro do prazo combinado.
-            </p>
-            <p>
-              ✔ <strong>Plano Inicial</strong> – até 15 dias úteis  
-            </p>
-            <p>
-              ✔ <strong>Plano VIP</strong> – até 30 dias úteis
-            </p>
-          </div>
-        </section>
-
-        <div style={styles.consultButtonContainer}>
-          <a
-            href="https://wa.me/+5518996578781"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={styles.consultButton}
-          >
-            Fale com especialista
           </a>
         </div>
       </main>
@@ -184,12 +135,6 @@ const styles = {
   icon: {
     fontSize: '3rem',
     color: '#111827',
-  },
-  aboutSection: {
-    marginTop: '3rem',
-    padding: '2rem',
-    backgroundColor: '#f3f4f6',
-    borderRadius: '8px',
   },
   priceSection: {
     marginTop: '3rem',
@@ -241,3 +186,34 @@ const styles = {
     marginBottom: '1.5rem',
   },
 };
+
+const animationStyles = `
+  @keyframes borderAnimation {
+    0% {
+      border-color: transparent;
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+    100% {
+      border-color: #111827;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  .animated-border {
+    border: 2px solid transparent;
+    animation: borderAnimation 1s ease-in-out forwards;
+  }
+
+  .start-border-animation {
+    animation-play-state: running;
+  }
+`;
+
+export function addGlobalStyles() {
+  const styleSheet = document.createElement("style");
+  styleSheet.type = "text/css";
+  styleSheet.innerText = animationStyles;
+  document.head.appendChild(styleSheet);
+}
+
+addGlobalStyles();
