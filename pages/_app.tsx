@@ -1,8 +1,8 @@
-import '../styles/globals.css';
 import React from "react";
 import Head from 'next/head';
 import { FaCode, FaPaintBrush, FaWhatsapp } from 'react-icons/fa';
-import '../styles/globals.css'; // Corrigido o caminho para o arquivo CSS
+import '@/styles/globals.css';
+
 
 export default function Home() {
   return (
