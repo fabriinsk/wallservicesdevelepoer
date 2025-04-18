@@ -1,32 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es5", // Define o código de saída como compatível com ES5
-    "lib": ["dom", "dom.iterable", "esnext"], // Bibliotecas necessárias para o Next.js
-    "allowJs": true, // Permite a compilação de arquivos JavaScript
-    "skipLibCheck": true, // Ignora a verificação das definições de tipos nas bibliotecas
-    "esModuleInterop": true, // Habilita a interoperabilidade entre módulos CommonJS e ESModules
-    "strict": true, // Habilita todas as verificações de tipo rigorosas
-    "forceConsistentCasingInFileNames": true, // Garante que os nomes de arquivos sejam consistentes
-    "noFallthroughCasesInSwitch": true, // Garante que não haja "fall-through" em instruções switch
-    "module": "esnext", // Usa módulos ES (import/export)
-    "moduleResolution": "node", // Resolves módulos como no Node.js
-    "resolveJsonModule": true, // Permite importar arquivos JSON como módulos
-    "isolatedModules": true, // Garante que cada arquivo seja compilado individualmente
-    "jsx": "react", // Define a sintaxe JSX
-    "baseUrl": ".", // Define a raiz para resolver módulos
+    "baseUrl": ".",
     "paths": {
-      "@components/*": ["components/*"], // Exemplo de path alias
-      "@utils/*": ["utils/*"]
+      "@/*": ["./*"]
     }
-  },
-  "include": [
-    "next-env.d.ts", // Inclui o arquivo de definições do Next.js
-    "**/*.ts", // Inclui todos os arquivos TypeScript
-    "**/*.tsx", // Inclui todos os arquivos TypeScript com JSX
-    "pages/**/*", // Inclui todos os arquivos dentro de 'pages'
-    "components/**/*" // Inclui todos os arquivos dentro de 'components'
-  ],
-  "exclude": [
-    "node_modules" // Exclui a pasta node_modules
-  ]
+  }
 }
