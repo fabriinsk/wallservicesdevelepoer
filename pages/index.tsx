@@ -13,76 +13,121 @@ export default function Home() {
         />
       </Head>
 
-      <header className="header">
+      <header style={styles.header}>
         <h1>WallServices</h1>
         <p>Web Design & Desenvolvimento de Software</p>
         <a
           href="https://wa.me/+5518996578781"
           target="_blank"
           rel="noopener noreferrer"
-          className="whatsappButton"
+          style={styles.whatsappButton}
         >
-          <FaWhatsapp /> Fale comigo
+          <FaWhatsapp /> Consulte seu orçamento
         </a>
       </header>
 
-      <main className="main">
-        <section className="section">
+      <main style={styles.main}>
+        <section style={styles.section}>
           <h2>
             <FaPaintBrush /> Web Design Profissional
           </h2>
           <p>Criação de sites modernos, responsivos e otimizados para conversão.</p>
         </section>
 
-        <section className="section">
+        <section style={styles.section}>
           <h2>
             <FaCode /> Desenvolvimento de Software
           </h2>
-          <p>Soluções personalizadas em sistemas web e aplicações sob medida.</p>
+          <p>
+            Soluções personalizadas em sistemas web e aplicações sob medida.
+          </p>
         </section>
 
-        <section className="section">
+        <section style={styles.section}>
           <h2>Portfólio</h2>
-          <div className="projects">
+          <div style={styles.projects}>
             <img src="/projeto1.jpg" alt="Projeto 1" />
             <img src="/projeto2.jpg" alt="Projeto 2" />
             <img src="/projeto3.jpg" alt="Projeto 3" />
-            <img src="/projeto4.jpg" alt="Projeto 4" />
+            <img src="/projeto4.jpg" alt="Projeto 4" /> {/* A quarta imagem foi adicionada aqui */}
           </div>
         </section>
 
-        <section className="pricingSection">
+        <section style={styles.section}>
           <h2>Tabela de Preços</h2>
-          <div className="pricingTable">
-            <div className="plan">
+          <div style={styles.priceTable}>
+            <div style={styles.plan}>
               <h3>Plano Plus</h3>
-              <p>✅ Site moderno</p>
-              <p>✅ Responsivo</p>
-              <p>✅ Otimização básica</p>
-              <p><strong>R$ 499</strong></p>
+              <p>Inclui até 10 páginas e suporte básico.</p>
+              <p>R$ 1.500,00</p>
             </div>
-            <div className="planVip">
+            <div style={styles.plan}>
               <h3>Plano VIP</h3>
-              <p>✨ Tudo do Plano Plus</p>
-              <p>✨ Painel de administração</p>
-              <p>✨ Suporte premium</p>
-              <p><strong>R$ 899</strong></p>
+              <p>Inclui até 20 páginas, suporte VIP e funcionalidades extras.</p>
+              <p>R$ 3.000,00</p>
             </div>
           </div>
-          <a
-            href="https://wa.me/+5518996578781"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="whatsappButton"
-          >
-            <FaWhatsapp /> Consulte seu orçamento
-          </a>
         </section>
       </main>
 
-      <footer className="footer">
+      <footer style={styles.footer}>
         <p>© {new Date().getFullYear()} WallServices. Todos os direitos reservados.</p>
       </footer>
     </>
   );
 }
+
+const styles = {
+  header: {
+    padding: "3rem 1rem",
+    textAlign: "center" as const,  // Certifique-se de usar 'center' como valor válido
+    backgroundColor: "#111827",
+    color: "#fff",
+  },
+  whatsappButton: {
+    marginTop: "1rem",
+    display: "inline-block",
+    padding: "0.8rem 1.5rem",
+    backgroundColor: "#25D366",
+    color: "#fff",
+    borderRadius: "8px",
+    fontWeight: "bold",
+    textDecoration: "none",
+  },
+  main: {
+    padding: "2rem 1rem",
+    maxWidth: "960px",
+    margin: "0 auto",
+  },
+  section: {
+    marginBottom: "3rem",
+  },
+  projects: {
+    display: "grid",
+    gap: "1rem",
+    gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+  },
+  priceTable: {
+    display: "flex",
+    justifyContent: "space-between",
+    gap: "1rem",
+    marginTop: "2rem",
+    border: "2px solid #ddd", // Contorno adicionado
+    padding: "1rem",
+    borderRadius: "8px",
+  },
+  plan: {
+    border: "1px solid #ddd",
+    padding: "1rem",
+    borderRadius: "8px",
+    flex: "1",
+    textAlign: "center" as const,  // Corrigido para 'center'
+  },
+  footer: {
+    textAlign: "center" as const,
+    padding: "2rem 1rem",
+    backgroundColor: "#f3f4f6",
+    marginTop: "2rem",
+    fontSize: "0.9rem",
+  },
+};
