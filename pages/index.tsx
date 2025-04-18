@@ -21,18 +21,25 @@ export default function Home() {
           <p>Criação de sites modernos, responsivos e otimizados para conversão.</p>
         </section>
 
-        <section style={styles.section}>
-          <h2><FaCode /> Desenvolvimento de Software</h2>
-          <p>Soluções personalizadas em sistemas web e aplicações sob medida.</p>
-        </section>
-
-        <section style={styles.section}>
-          <h2>Portfólio</h2>
-          <div style={styles.projects}>
-            <img src="/projeto1.jpg" alt="Projeto 1" style={styles.projectImage} />
-            <img src="/projeto2.jpg" alt="Projeto 2" style={styles.projectImage} />
-            <img src="/projeto3.jpg" alt="Projeto 3" style={styles.projectImage} />
-            <img src="/projeto4.jpg" alt="Projeto 4" style={styles.projectImage} />
+        {/* Serviços */}
+        <section style={styles.servicesSection}>
+          <h2>Serviços</h2>
+          <div style={styles.services}>
+            <div style={styles.serviceCard}>
+              <FaCode style={styles.icon} />
+              <h3>Web Sites</h3>
+              <p>Desenvolvimento de Landing Pages, Sites Institucionais, Blogs e E-commerces, focados em velocidade, SEO e conversão.</p>
+            </div>
+            <div style={styles.serviceCard}>
+              <FaPaintBrush style={styles.icon} />
+              <h3>Tráfego Pago</h3>
+              <p>Estratégias para Google Ads e Meta Ads, maximizando resultados com campanhas otimizadas.</p>
+            </div>
+            <div style={styles.serviceCard}>
+              <FaWhatsapp style={styles.icon} />
+              <h3>Consultoria Digital</h3>
+              <p>Análise estratégica para estruturar e escalar sua operação no digital.</p>
+            </div>
           </div>
         </section>
 
@@ -85,6 +92,54 @@ export default function Home() {
             Consulte seu orçamento
           </a>
         </div>
+
+        <section style={styles.faqSection}>
+          <h2>Perguntas Frequentes</h2>
+
+          <div style={styles.faqItem}>
+            <h3>Como funciona o processo de criação?</h3>
+            <p>
+              O processo de criação é dividido em etapas claras e transparentes, começando com uma consulta inicial para entender as necessidades do cliente. Em seguida, desenvolvemos o design e a funcionalidade do site com feedback contínuo do cliente até a entrega final.
+            </p>
+          </div>
+
+          <div style={styles.faqItem}>
+            <h3>Quais são as formas de pagamento?</h3>
+            <p>
+              💳 <strong>Cartão de Crédito</strong> – Pagamento integral no início do projeto, podendo ser parcelado em até 5x sem juros ou em até 12x com juros.
+            </p>
+            <p>
+              🏦 <strong>PIX</strong> – Pagamento em duas etapas: 50% no início do projeto e 50% na entrega.
+            </p>
+          </div>
+
+          <div style={styles.faqItem}>
+            <h3>Como garantimos a segurança da sua contratação?</h3>
+            <p>
+              Prezamos pela transparência e segurança em cada projeto. Por isso, oferecemos um contrato opcional, que detalha todos os entregáveis, prazos e condições, garantindo clareza e compromisso para ambas as partes.
+            </p>
+            <p>
+              Embora seja opcional, recomendamos essa formalização para maior tranquilidade e segurança do cliente. Nosso compromisso sempre será entregar um site de alta qualidade dentro do prazo combinado.
+            </p>
+            <p>
+              ✔ <strong>Plano Inicial</strong> – até 15 dias úteis  
+            </p>
+            <p>
+              ✔ <strong>Plano VIP</strong> – até 30 dias úteis
+            </p>
+          </div>
+        </section>
+
+        <div style={styles.consultButtonContainer}>
+          <a
+            href="https://wa.me/+5518996578781"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={styles.consultButton}
+          >
+            Fale com especialista
+          </a>
+        </div>
       </main>
 
       <footer style={styles.footer}>
@@ -109,20 +164,31 @@ const styles = {
   section: {
     marginBottom: '3rem',
   },
-  projects: {
-    display: 'grid',
-    gap: '1rem',
-    gridTemplateColumns: 'repeat(2, 1fr)',
+  servicesSection: {
+    marginTop: '3rem',
+    textAlign: 'center' as const,
   },
-  projectImage: {
-    width: '100%',
-    height: 'auto',
+  services: {
+    display: 'flex',
+    justifyContent: 'space-around',
+    gap: '2rem',
+    marginTop: '2rem',
+  },
+  serviceCard: {
+    padding: '1.5rem',
+    border: '2px solid #ccc',
     borderRadius: '8px',
+    width: '30%',
+    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+  },
+  icon: {
+    fontSize: '3rem',
+    color: '#111827',
   },
   aboutSection: {
     marginTop: '3rem',
     padding: '2rem',
-    backgroundColor: '#f9fafb',
+    backgroundColor: '#f3f4f6',
     borderRadius: '8px',
   },
   priceSection: {
@@ -155,6 +221,8 @@ const styles = {
     borderRadius: '8px',
     fontWeight: 'bold',
     textDecoration: 'none',
+    boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
+    transition: 'transform 0.3s ease',
   },
   footer: {
     textAlign: 'center' as const,
@@ -162,5 +230,14 @@ const styles = {
     backgroundColor: '#f3f4f6',
     marginTop: '2rem',
     fontSize: '0.9rem',
+  },
+  faqSection: {
+    marginTop: '3rem',
+    padding: '2rem',
+    backgroundColor: '#f3f4f6',
+    borderRadius: '8px',
+  },
+  faqItem: {
+    marginBottom: '1.5rem',
   },
 };
