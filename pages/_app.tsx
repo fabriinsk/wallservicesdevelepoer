@@ -1,7 +1,8 @@
 import React from "react";
 import Head from 'next/head';
 import { FaCode, FaPaintBrush, FaWhatsapp } from 'react-icons/fa';
-import '../styles/globals.css';
+import '@/styles/globals.css';
+;
 
 
 
